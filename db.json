@@ -1,0 +1,58 @@
+{
+    "empresas": [
+      {
+        "nome": "Tech Solutions",
+        "setor": "Tecnologia da Informação",
+        "descrição": "Tech Solutions é uma empresa líder em soluções de software e serviços de TI. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "mediaAvaliacao": "positiva",
+        "local": "Estados Unidos",
+        "qtdVagas": 150,
+        "pcd": false,
+        "feedbacks": [
+          {
+            "nome": "Ana",
+            "data": "05/04/2001",
+            "descricao": "Ótima experiência de trabalho, ambiente colaborativo e inclusivo.",
+            "nivelInclusao": "alto",
+            "nivelDiversidade": "alto",
+            "apoioPCD": true
+          },
+          {
+            "nome": "Carlos",
+            "data": "12/06/2002",
+            "descricao": "Empresa com grande foco em inovação e desenvolvimento profissional.",
+            "nivelInclusao": "regular",
+            "nivelDiversidade": "regular",
+            "apoioPCD": false
+          }
+        ]
+      },
+      {
+        "nome": "Educação Mais",
+        "setor": "Educação",
+        "descrição": "Educação Mais é uma instituição dedicada a fornecer educação de qualidade para todos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "mediaAvaliacao": "positiva",
+        "local": "Brasil",
+        "qtdVagas": 80,
+        "pcd": true,
+        "feedbacks": [
+          {
+            "nome": "Luisa",
+            "data": "20/09/2005",
+            "descricao": "Excelente ambiente de trabalho, com grande respeito à diversidade.",
+            "nivelInclusao": "alto",
+            "nivelDiversidade": "alto",
+            "apoioPCD": true
+          },
+          {
+            "nome": "Mariana",
+            "data": "03/11/2006",
+            "descricao": "Empresa comprometida com a inclusão de todos os funcionários, independente de suas habilidades.",
+            "nivelInclusao": "alto",
+            "nivelDiversidade": "alto",
+            "apoioPCD": true
+          }
+        ]
+      }
+    ]
+  }
