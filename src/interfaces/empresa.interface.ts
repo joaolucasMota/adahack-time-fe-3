@@ -10,6 +10,7 @@ interface IFeedback {
   }
   
   interface IEmpresa {
+    id: string;
     nome: string;
     setor: string;
     descricao: string;
