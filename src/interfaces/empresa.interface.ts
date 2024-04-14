@@ -1,6 +1,6 @@
 // src/types.d.ts
 
-interface IFeedback {
+export interface IFeedback {
     nome: string;
     data: string;
     descricao: string;
@@ -8,8 +8,8 @@ interface IFeedback {
     nivelDiversidade: 'baixo' | 'regular' | 'alto';
     apoioPCD: boolean;
   }
-  
-  interface IEmpresa {
+
+  export interface IEmpresa {
     id: string;
     nome: string;
     setor: string;
@@ -20,6 +20,3 @@ interface IFeedback {
     pcd: boolean;
     feedbacks: IFeedback[];
   }
-  
-  export default IEmpresa;
-  
