@@ -26,6 +26,32 @@
             "nivelDiversidade": "regular",
             "apoioPCD": false
           }
+        ],       
+         "vagas": [
+          {
+            "id": 1,
+            "dataPublicacao": "Há 2 Semanas",
+            "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
+            "salario": "R$ 2000 - 3000",
+            "quantidadeVagas": "10 Vagas",
+            "aceitaPCD": true
+          },
+          {
+            "id": 2,
+            "dataPublicacao": "Há 3 Semanas",
+            "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
+            "salario": "R$ 2000 - 3000",
+            "quantidadeVagas": "25 Vagas",
+            "aceitaPCD": false
+          },
+          {
+            "id": 3,
+            "dataPublicacao": "Há 1 Dia",
+            "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
+            "salario": "R$ 2000 - 3000",
+            "quantidadeVagas": "15 Vagas",
+            "aceitaPCD": true
+          }
         ]
       },
       {
@@ -54,7 +80,34 @@
             "nivelDiversidade": "alto",
             "apoioPCD": true
           }
+        ],
+        "vagas": [
+          {
+            "id": 1,
+            "dataPublicacao": "Há 2 Semanas",
+            "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
+            "salario": "R$ 2000 - 3000",
+            "quantidadeVagas": "10 Vagas",
+            "aceitaPCD": true
+          },
+          {
+            "id": 2,
+            "dataPublicacao": "Há 3 Semanas",
+            "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
+            "salario": "R$ 2000 - 3000",
+            "quantidadeVagas": "25 Vagas",
+            "aceitaPCD": false
+          },
+          {
+            "id": 3,
+            "dataPublicacao": "Há 1 Dia",
+            "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
+            "salario": "R$ 2000 - 3000",
+            "quantidadeVagas": "15 Vagas",
+            "aceitaPCD": true
+          }
         ]
       }
     ]
+
   }
