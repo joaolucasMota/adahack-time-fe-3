@@ -19,4 +19,15 @@ export interface IFeedback {
     qtdVagas: number;
     pcd: boolean;
     feedbacks: IFeedback[];
+    Vagas: IVaga[]
   }
+
+  export interface IVaga {
+    id: number;
+    dataPublicacao: string;
+    nomeVaga: string;
+    salario: string;
+    aceitaPCD: boolean;
+    quantidadeVagas: string;
+  }
+
