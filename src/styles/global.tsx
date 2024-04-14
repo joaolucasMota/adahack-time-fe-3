@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
         * {
     margin: 0;
     padding: 0;
@@ -43,7 +43,7 @@ export default createGlobalStyle`
         --color-07: #D79921;
         --color-08: #CC241D;
         --color-09: #427B58;
-
+    
         --color-contrast-05: #2A412B;
         --color-contrast-06: #244547;
         --color-contrast-07: #543C0D;

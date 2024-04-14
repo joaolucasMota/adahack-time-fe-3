@@ -1,11 +1,13 @@
 import { RouterProvider } from 'react-router-dom'
 import { router } from './routes'
 import ReactDOM from 'react-dom/client'
-import './styles/index.css'
+
 import React from 'react'
+import { GlobalStyles } from './styles/global'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GlobalStyles /> {/* Estilos globais */}
+    <RouterProvider router={router} /> {/* Provedor do roteador */}
   </React.StrictMode>,
 )
