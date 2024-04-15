@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+export const Container = styled.div`
     background-color: var(--bg-color-02);
     border: 1px solid var(--bg-color-03);
     color: var(--text-color-01);
@@ -25,4 +25,5 @@ export const CardFooter = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: .5em;
 `;
