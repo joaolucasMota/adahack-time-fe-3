@@ -4,7 +4,7 @@ type FeedbackProps = {
     variant: S.FeedbackVariant;
   };
 
-export const TagAvaliacao = ({ variant }: FeedbackProps) => {
+export const TagFeedback = ({ variant }: FeedbackProps) => {
     return (
         <S.Container>
             <S.Text>Avaliação dos Usuários: </S.Text>
