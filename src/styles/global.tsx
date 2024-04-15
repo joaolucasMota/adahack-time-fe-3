@@ -1,54 +1,70 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    :root 
+    {
+        --bg-color-01:      #FFFFFF;
+        --bg-color-02:      #FCF5EB;
+        --bg-color-03:      #D5C4A1;
+        --text-color-01:    #3c3836;
+        --dark-green-color: #427B58;
+        --green-color:      #689D6A;
+        --blue-color:       #458588;
+        --yellow-color:     #D79921;
+        --red-color:        #CC241D;
     }
 
-    *:focus {
-    outline: 0;
+    .contrast
+    {
+        --dark-green-color: #426744;
+        --green-color:      #2A412B;
+        --blue-color:       #244547;
+        --yellow-color:     #543C0D;
+        --red-color:        #811612;
     }
 
-    html, body, #root{
-    height: 100%;
-    
+    ::selection
+    {
+        background-color: #3c383680;
     }
 
-    body{
+    * 
+    {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body
+    {
         font-family: "Montserrat", sans-serif;
-        font-weight: 100;
+        color: var(--text-color-01);
+        line-height: 1.5;
     }
 
-    a,i{
-    text-decoration: none;
-    color: inherit;
+    /* -----  ----- ScrollBar -----  ----- */
+
+    ::-webkit-scrollbar 
+    {
+        height: .75em;
+        width: 1em;
     }
 
-    ul{
-    list-style: none;
+    ::-webkit-scrollbar-track 
+    {
+        background: #3c3836;
     }
 
-    button{
-    cursor: pointer;
+    ::-webkit-scrollbar-thumb 
+    {
+        border: 2px solid #3c3836;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background: #555; 
     }
-    :root {
-        --color-01: #3c3836;
-        --color-02: #FCF5EB;
-        --color-03: #FFFFFF;
-        --color-04: #D5C4A1;
-        --color-05: #689D6A;
-        --color-06: #458588;
-        --color-07: #D79921;
-        --color-08: #CC241D;
-        --color-09: #427B58;
 
-        --color-contrast-05: #2A412B;
-        --color-contrast-06: #244547;
-        --color-contrast-07: #543C0D;
-        --color-contrast-08: #811612;
-        --color-contrast-09: #426744;
-    } 
-
+    ::-webkit-scrollbar-thumb:hover 
+    {
+        background: #777; 
+    }
 `;
