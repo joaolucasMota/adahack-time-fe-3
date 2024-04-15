@@ -5,7 +5,7 @@ import axios from "axios";
 import { NewFeedbackButton } from "../../components/NewFeedbackButton";
 import { SectionHeader } from "../../components/SectionHeader";
 import { TagComponent } from "../../components/TagComponent";
-import { CompanyCard } from "../../components/CompanyCard"
+import { CompanyCard } from "../../components/CompanyCard";
 import { BASE_URL } from "../../util/api";
 
 export const HomePage = () => {
