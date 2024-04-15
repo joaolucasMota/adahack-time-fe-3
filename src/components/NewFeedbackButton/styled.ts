@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NewFeedbackContainer = styled.div`
+export const Container = styled.div`
     a
     {
         display: flex;

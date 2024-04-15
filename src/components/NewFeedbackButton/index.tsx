@@ -1,14 +1,14 @@
 import { MessageCirclePlus } from "lucide-react"
-import * as S from "./styled"
 import { Link } from "react-router-dom"
+import * as S from "./styled"
 
-export const ButtonNewFeedback = () => {
+export const NewFeedbackButton = () => {
     return (
-        <S.NewFeedbackContainer>
+        <S.Container>
             <Link to={"#"}>
                 <MessageCirclePlus size={24} />
                 <p>Adicionar Feedback</p>
             </Link>
-        </S.NewFeedbackContainer>
+        </S.Container>
     )
 }
