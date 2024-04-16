@@ -5,6 +5,8 @@ import { Container, DivLogin, DivTitle, Divider, LoginContainer, NewAccount, Rem
 
 
 export const LoginPage = () => {
+
+
     return (
         <Container>
             <DivTitle>
@@ -16,16 +18,12 @@ export const LoginPage = () => {
                 <LoginContainer>
 
                     <h2>Boas vindas</h2>
-
                     <StyledInputComponent type="email" placeholder="Email:" />
                     <InputComponent type="password" placeholder="Senha:" />
-
                     <RememberPassword>
                         <a>Esqueci minha senha</a>
                     </RememberPassword>
-
-                    <Button text="ENTRAR" to="/" />
-
+                    <Button text="ENTRAR" to={""} />
                     <Divider />
 
                     <NewAccount>
@@ -43,9 +41,9 @@ export const LoginPage = () => {
                 </LoginContainer>
 
                 <Bottom>
-                    <Footer/>
+                    <Footer />
                 </Bottom>
-                
+
             </DivLogin>
 
         </Container>

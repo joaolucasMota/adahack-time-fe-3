@@ -1,14 +1,21 @@
 import { Footer } from "../../components/Footer";
 import { Bottom, Container, DivLogin, DivTitle, Form, RegisterContainer } from "./styled";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { USERS_BASE_URL } from "../../util/api";
 
 
 export const RegisterPage = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data: any) => {
-        console.log(data);
+    const onSubmit = async (data : any) => {
+        try {
+            const response = await axios.post(USERS_BASE_URL, data);
+            console.log(response.data); 
+        } catch (error) {
+            throw(error); 
+        }
     };
 
     return (
@@ -24,7 +31,6 @@ export const RegisterPage = () => {
                     <h2>Registre-se</h2>
 
                     <Form onSubmit={handleSubmit(onSubmit)}>
-
                         <div>
                             <label>Nome:</label>
                             <input {...register("nome")} type="text" />
@@ -33,7 +39,6 @@ export const RegisterPage = () => {
                             <label>Email:</label>
                             <input {...register("email")} type="email" />
                         </div>
-
                         <div>
                             <label>Senha:</label>
                             <input {...register("senha")} type="password" />

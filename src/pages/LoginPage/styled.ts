@@ -73,6 +73,25 @@ export const LoginContainer = styled.div`
     }
 `;
 
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+
+    > input[type="submit"] {
+    border: 2px solid var(--dark-green-color);
+    background-color: var(--dark-green-color);
+    color: var(--text-color-01);
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    user-select: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+    color: #fff;
+    }
+`;
+
 export const StyledInputComponent = styled(InputComponent)`
   margin-bottom: 1rem;
 `;
