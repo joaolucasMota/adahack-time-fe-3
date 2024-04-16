@@ -1,4 +1,4 @@
-import NavMenu from "../NavMenu";
+import { NavMenu } from "../NavMenu";
 import * as S from "./styled";
 
 export const Header = () => {
