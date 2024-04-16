@@ -2,28 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import * as S from "./style";
 import { Accessibility, BriefcaseBusiness} from 'lucide-react';
-//import {Ivagas} from '../../interfaces/empresa.interface'
+import {IVaga} from '../../interfaces/empresa.interface'
 
-interface Vaga {
-  id: number;
-  dataPublicacao: string;
-  nomeVaga: string;
-  salario: string;
-  aceitaPCD: boolean;
-  quantidadeVagas: string;
-  vagas: string[];
-}
 
 
 export const CardVagas = () => {
   
-  const [vagas, setVagas] = useState<Vaga[]>([]);
+  const [vagas, setVagas] = useState<IVaga[]>([]);
 
   useEffect(() => {
     axios
-      .get<Vaga[]>("http://localhost:3000/empresas") 
+      .get<IVaga[]>(`http://localhost:3000/empresas/`) 
       .then((response) => {
-
         response.data.forEach((ele)=> {
           setVagas(ele.vagas);
           //console.log(ele.vagas)
@@ -49,7 +39,9 @@ export const CardVagas = () => {
               <hr />
             </S.NomeVaga>
 
-              <p>Vaga afirmativa para negros & pardos</p>
+            <S.VagaAfirmativa>
+            { vaga.vagaAfirmativa ? "Vaga afirmativa para negros & pardos" : "Vaga aberta para todos"}
+            </S.VagaAfirmativa>
 
             <S.QuantidadeVagas>
               <p><Accessibility /> { vaga.aceitaPCD ? "Aceita PCD" : "Não aceita PCD"}</p>

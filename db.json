@@ -30,26 +30,29 @@
          "vagas": [
           {
             "id": 1,
-            "dataPublicacao": "Há 2 Semanas",
+            "dataPublicacao": "1",
             "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
             "salario": "R$ 2000 - 3000",
             "quantidadeVagas": "10 Vagas",
+            "vagaAfirmativa": true,
             "aceitaPCD": true
           },
           {
             "id": 2,
-            "dataPublicacao": "Há 3 Semanas",
+            "dataPublicacao": "1",
             "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
             "salario": "R$ 2000 - 3000",
             "quantidadeVagas": "25 Vagas",
+            "vagaAfirmativa": true,
             "aceitaPCD": false
           },
           {
             "id": 3,
-            "dataPublicacao": "Há 1 Dia",
+            "dataPublicacao": "1",
             "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
             "salario": "R$ 2000 - 3000",
             "quantidadeVagas": "15 Vagas",
+            "vagaAfirmativa": false,
             "aceitaPCD": true
           }
         ]
@@ -88,6 +91,7 @@
             "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
             "salario": "R$ 2000 - 3000",
             "quantidadeVagas": "10 Vagas",
+            "vagaAfirmativa": true,
             "aceitaPCD": true
           },
           {
@@ -96,6 +100,7 @@
             "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
             "salario": "R$ 2000 - 3000",
             "quantidadeVagas": "25 Vagas",
+            "vagaAfirmativa": true,
             "aceitaPCD": false
           },
           {
@@ -104,6 +109,7 @@
             "nomeVaga": "Desenvolvedor Front-End - React, Javascript, TypeScript, Vue",
             "salario": "R$ 2000 - 3000",
             "quantidadeVagas": "15 Vagas",
+            "vagaAfirmativa": false,
             "aceitaPCD": true
           }
         ]

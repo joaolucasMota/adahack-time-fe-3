@@ -6,26 +6,26 @@ export const ContainerCardVagas = styled.section`
   flex-wrap: wrap;
   gap: 20px;
   width: 90%;
-  padding: 20px
+  padding: 20px;
 `;
 
 export const CardVagas = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: space-around;
 text-align: center;
 width: 280px;
 height: 220px;
 background-color: #FCF5EB;
 border: 1px solid #D5C4A1;
 border-radius: 8px;
-padding: 15px;
+padding: 10px;
+cursor: pointer;
 `;
 
 export const DataPublicacao = styled.p`
 text-align: end;
 /*border: 1px solid rebeccapurple;*/
-margin: 0;
 `;
 
 export const NomeVaga = styled.div`
@@ -34,7 +34,6 @@ font-weight: bold;
 text-align: center;
 
 hr{
-  margin: 0;
   border: 1px solid black;
 }
 
@@ -42,10 +41,6 @@ hr{
 
 export const SalarioVaga = styled.div`
 text-align: end;
-
-p {
-  margin: 8px;
-}
 
 span{
   font-weight: bold;
@@ -61,8 +56,12 @@ width: 100%;
 
 p {
   display: flex;
-  margin: 0;
-  font-size: 19px;
+  font-size: 15px;
 }
 `;
+
+export const VagaAfirmativa = styled.div `
+  width: 100%;
+  /*border: 1px solid black;*/
+`
 
