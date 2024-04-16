@@ -1,12 +1,24 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+export const CardLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`;
+
 export const Container = styled.div`
-    background-color: var(--bg-color-02);
     border: 1px solid var(--bg-color-03);
+    background-color: var(--bg-color-02);
     color: var(--text-color-01);
+    height: fit-content;
     border-radius: 8px;
     max-width: 320px;
     padding: 1em;
+
+    @media screen and (max-width: 800px)
+    {
+        max-width: none;
+    }
 `;
 
 export const Title = styled.h2`
