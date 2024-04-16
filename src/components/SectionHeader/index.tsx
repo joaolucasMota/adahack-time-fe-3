@@ -2,21 +2,21 @@ import { Building, CircleArrowLeft, Settings } from "lucide-react"
 import { Link } from "react-router-dom"
 import * as S from "./styled"
 
-export type SectionVariant = 'homepage' | 'settings' | 'company';
+export type SectionPage = 'home' | 'settings' | 'company';
 
 interface ISectionHeaderProps {
-    variant: SectionVariant,
+    page: SectionPage,
     mainText: string,
     subText: string
 }
 
-export const SectionHeader  = ( { variant, mainText, subText }:ISectionHeaderProps ) => {
+export const SectionHeader  = ( { page, mainText, subText }:ISectionHeaderProps ) => {
     return (
         <S.Container>
             {   
-                (variant == 'homepage') ? <Building size={48} /> :
-                (variant == 'settings') ? <Settings size={48} /> :
-                <Link to={"/"}><CircleArrowLeft size={48} /></Link>
+                (page == 'home') ? <div><Building size={42} absoluteStrokeWidth /></div> :
+                (page == 'settings') ? <div><Settings size={42} absoluteStrokeWidth /></div> :
+                <Link to={"/"}><CircleArrowLeft size={42} absoluteStrokeWidth /></Link>
             }
             <div>
                 <h1>{mainText}</h1>

@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    border-bottom: 2px solid;
-    background-color: var(--bg-color-02);
-    padding: 2em 1em 1em 1em;
     overflow: hidden;
-    max-width: 100%;
     gap: 1em;
+
+    padding: 2em 2em 1em 2em;
+    border-bottom: 2px solid;
+    max-width: 100%;
 
     * 
     {
-        transition: .1s;
+        transition: .25s;
     }
 
     h1
@@ -48,7 +48,7 @@ export const Container = styled.div`
 
         p 
         { 
-            font-size: 12px; 
+            font-size: 14px;
         }
 
         svg 
