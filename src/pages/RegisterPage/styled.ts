@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { InputComponent } from "../../components/Input";
 
 export const Container = styled.div`
     display: flex;
@@ -40,11 +39,12 @@ export const DivLogin = styled.div`
     flex-direction: column; 
 `;
 
-export const LoginContainer = styled.div`
+export const RegisterContainer = styled.div`
     
     display: flex;
     flex-direction: column;
     padding: 5rem;
+    margin-bottom: 2rem;
 
     > h2 {
         font-size: 4rem;
@@ -63,71 +63,58 @@ export const LoginContainer = styled.div`
         }
     }
 
-    >input{
-        padding-bottom: 1rem;
-    }
-
     @media (max-width: 720px) 
     {
     padding: 1rem;
     }
 `;
 
-export const StyledInputComponent = styled(InputComponent)`
-  margin-bottom: 1rem;
-`;
-
-export const RememberPassword = styled.div`
+export const Form = styled.form`
   display: flex;
-  align-items: center; 
-  justify-content: flex-end; 
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  text-decoration: underline;
-  font-weight: 600;
-  color: var(--text-color-01);
-  font-style: italic;
+  flex-direction: column;
+
+  > div {
+    margin-bottom: 1rem;
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+  }
+
+  input[type="submit"] {
+    border: 2px solid var(--dark-green-color);
+    background-color: var(--dark-green-color);
+    color: var(--text-color-01);
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    user-select: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+    color: #fff;
+    @media (max-width: 992px) 
+        {
+        font-size: .8em;
+        }
     
-  @media (max-width: 992px) 
-        {
-        font-size: 1rem;
-        }
-`;
-
-export const Divider = styled.hr`
-  border: none;
-  border-top: 3px solid var(--bg-color-03); 
-  width: 100%;
-  margin: 2rem 0;
-  margin-bottom: 2rem;
-`;
-
-export const NewAccount = styled.div`
-  text-align: center;
-  > h3 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-
-    @media (max-width: 992px) 
-        {
-        font-size: 1.5rem;
-        }
-  }
-
-  > p {
-    font-weight: 300;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-
-    @media (max-width: 992px) 
-        {
-        font-size: 1rem;
-        }
+    &:hover
+    {
+        transition: .15s;
+        background-color: var(--green-color);
+    }
   }
 `;
+
 
 export const Bottom = styled.div`
     position: fixed;

@@ -1,7 +1,7 @@
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { InputComponent } from "../../components/Input";
-import { Container, DivLogin, DivTitle, Divider, LoginContainer, NewAccount, RememberPassword, StyledInputComponent } from "./styled";
+import { Container, DivLogin, DivTitle, Divider, LoginContainer, NewAccount, RememberPassword, StyledInputComponent, Bottom } from "./styled";
 
 
 export const LoginPage = () => {
@@ -37,13 +37,16 @@ export const LoginPage = () => {
                             É fácil, clique no botão a baixo e crie sua conta:
                         </p>
 
-                        <Button text="Criar conta" to="/" />
+                        <Button text="Criar conta" to="/register" />
                     </NewAccount>
 
                 </LoginContainer>
+
+                <Bottom>
+                    <Footer/>
+                </Bottom>
                 
             </DivLogin>
-
 
         </Container>
     );
