@@ -1,23 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-color-02);
     font-weight: 300;
-    margin:1rem auto;
     border: 1px solid var(--bg-color-03);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    border-radius: 8px;
+    padding: 1em;
+    height:100%;
+    max-width: 360px;
+
+    @media screen and (max-width: 800px)
+    {
+        max-width: none;
+    }
 `;
 export const ContainerRow = styled.div`
     display: flex;
     justify-content: space-between;
     h2{
-        font-size: small;
-        margin-bottom: 0.5rem;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 0.25em;
     }
     p{
-        font-size: small;
+        font-size: 12px;
         font-weight: 600;
         margin-top: 0.25rem;
         span{
@@ -27,5 +35,4 @@ export const ContainerRow = styled.div`
 `;
 export const ContainerDescription = styled.div`
 margin: 0.5rem 0;
-
 `;
