@@ -1,8 +1,16 @@
-import { Accessibility, MapPinned, BriefcaseBusiness } from "lucide-react"
+import { Accessibility, MapPinned, BriefcaseBusiness, PersonStanding, Contrast, ALargeSmall } from "lucide-react"
 import * as S from "./styled"
 
-export type IconVariant = 'PCDs' | 'endereco' | 'vagas';
 export type TextSize = 'small' | 'medium' | `large`;
+
+export type IconVariant = 
+    'PCDs' 
+    | 'endereco' 
+    | 'vagas' 
+    | 'acessibilidade' 
+    | 'contraste' 
+    | 'tamanho-fonte'
+;
 
 interface ITagComponentProps {
     variant: IconVariant,
@@ -16,6 +24,9 @@ export const TagComponent = ( { variant, text, textSize }:ITagComponentProps ) =
             {   
                 (variant == 'PCDs') ? <Accessibility size={20} /> :
                 (variant == 'endereco') ? <MapPinned size={20} /> :
+                (variant == 'acessibilidade') ? <PersonStanding size={20} /> :
+                (variant == 'contraste') ? <Contrast size={20} /> :
+                (variant == 'tamanho-fonte') ? <ALargeSmall size={20} /> :
                 <BriefcaseBusiness size={20} />
             }
             <p className={textSize}>{text}</p>
