@@ -158,6 +158,6 @@ Durante o desenvolvimento do projeto, enfrentamos o desafio de gerenciar eficien
 - [ ] Migrar a maneira com que os dados são salvos para um Firebase.
 - [ ] Criar uma área de cadastro e edição de empresas para melhorar a interação com os usuários.
 
-📝 Licença
+## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
