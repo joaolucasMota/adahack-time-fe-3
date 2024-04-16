@@ -1,68 +1,36 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import * as S from "./style";
-import { Accessibility, BriefcaseBusiness} from 'lucide-react';
-//import {Ivagas} from '../../interfaces/empresa.interface'
+import { VagaProps } from '../../@types/types';
+import { TagComponent } from '../TagComponent';
+import * as S from "./styled";
 
-interface Vaga {
-  id: number;
-  dataPublicacao: string;
-  nomeVaga: string;
-  salario: string;
-  aceitaPCD: boolean;
-  quantidadeVagas: string;
-  vagas: string[];
+interface IVaga {
+    vaga: VagaProps;
 }
 
-
-export const CardVagas = () => {
-  
-  const [vagas, setVagas] = useState<Vaga[]>([]);
-
-  useEffect(() => {
-    axios
-      .get<Vaga[]>("http://localhost:3000/empresas") 
-      .then((response) => {
-
-        response.data.forEach((ele)=> {
-          setVagas(ele.vagas);
-          //console.log(ele.vagas)
-        })
-
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados:", error);
-      });
-  }, []);
-
+export const CardVagas = ( { vaga }:IVaga ) => {
   return (
-      <S.ContainerCardVagas>
-        {vagas.map((vaga) => (
-          <S.CardVagas key={vaga.id}>
+    <S.CardVagas key={vaga.id}>
 
-              <S.DataPublicacao>
-                {vaga.dataPublicacao}
-              </S.DataPublicacao>
+        <S.DataPublicacao>
+            { vaga.dataPublicacao }
+        </S.DataPublicacao>
 
-            <S.NomeVaga>
-              <h4>{vaga.nomeVaga}</h4>
-              <hr />
-            </S.NomeVaga>
+        <S.NomeVaga title={ vaga.nomeVaga }>
+            { vaga.nomeVaga }
+        </S.NomeVaga>
+        
+        <S.HR />
 
-              <p>Vaga afirmativa para negros & pardos</p>
+        <S.VagaAfirmativa>Vaga afirmativa para negros & pardos</S.VagaAfirmativa>
 
-            <S.QuantidadeVagas>
-              <p><Accessibility /> { vaga.aceitaPCD ? "Aceita PCD" : "Não aceita PCD"}</p>
-              <p><BriefcaseBusiness /> { vaga.quantidadeVagas}</p>
-            </S.QuantidadeVagas>
+        <S.DivInformacoes>
+            <TagComponent variant='PCDs' text={ vaga.aceitaPCD ? "Aceita PCD" : "Não aceita PCD" } />
+            <TagComponent variant='vagas' text={ vaga.quantidadeVagas } />
+        </S.DivInformacoes>
 
-            <S.SalarioVaga>
-              <p><span>Salários: </span>{vaga.salario}</p>
-            </S.SalarioVaga>
-          </S.CardVagas>
-        ))}
-      </S.ContainerCardVagas>
+        <S.DivSalarioVaga>
+            <span>Salários:</span>
+            <p>{ vaga.salario }</p>
+        </S.DivSalarioVaga>
+    </S.CardVagas>
   );
 };
-
-export default CardVagas;

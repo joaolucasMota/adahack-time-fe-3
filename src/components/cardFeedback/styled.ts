@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: block;
-    background-color: var(--color-02);
+    background-color: var(--bg-color-02);
     font-weight: 300;
     margin:1rem auto;
-    border: 1px solid var(--color-04);
+    border: 1px solid var(--bg-color-03);
     border-radius: 0.5rem;
     padding: 0.5rem;
 `;

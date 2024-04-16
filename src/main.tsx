@@ -1,15 +1,13 @@
-import { RouterProvider } from 'react-router-dom'
-import { router } from './routes'
+import GlobalStyle from './styles/global'
 import ReactDOM from 'react-dom/client'
 import React from 'react'
-import { GlobalStyles } from './styles/global'
-import { Header } from './components/Header'
 
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <GlobalStyles />
-    <Header />
+    <GlobalStyle />
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
