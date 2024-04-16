@@ -1,16 +1,36 @@
-import { useEffect, useState } from "react";
-import * as S from "./styled"
+import { ChangeEvent, useEffect, useState } from "react";
+import { EmpresaProps } from "../../@types/types";
+import { BASE_URL } from "../../util/api";
+import * as S from "./styled";
 import axios from "axios";
 
-import { NewFeedbackButton } from "../../components/NewFeedbackButton";
 import { SectionHeader } from "../../components/SectionHeader";
-import { TagComponent } from "../../components/TagComponent";
 import { CompanyCard } from "../../components/CompanyCard";
-import { BASE_URL } from "../../util/api";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 export const HomePage = () => {
 
+    const [search, setSearch] = useState('');
+
+    // const [filter, setFilter] = useState('');
+
     const [CompanyData, setCompanyData] = useState<EmpresaProps[]>([]);
+
+    const filteredSearch = (search != '')
+    ? CompanyData.filter(empresa => empresa.nome.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+    : CompanyData;
+
+    // function handleFilter(selectedValue: ChangeEvent<HTMLSelectElement>) {
+    //     const filter = selectedValue.target.value;
+    //     console.log(filter);
+    //     setFilter(filter);
+    // }
+
+    function handleSearch(event: ChangeEvent<HTMLInputElement>) {
+        const query = event.target.value;
+        setSearch(query);
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -24,23 +44,33 @@ export const HomePage = () => {
     }, [CompanyData]);
 
     return (
-        <>
+        <S.PageContainer>
+            <Header />
             <SectionHeader 
-                variant="homepage"
-                mainText="Corp Solutions Corp Solutions Corp ApenasUmTesteDeTextoMuitoLongoParaAQuebraDeLinhaNoMobile"
-                subText="Recursos Humanos" 
+                page="home"
+                mainText="Empresas"
+                subText="Que Apoiam a Inclusão e Diversidade"
             />
-            <br />
+            
             <S.Container>
-                <p>Hello World</p>
+                <S.SearchBarDiv>
+                    {/* // Rascunho da ideia  */}
+                    {/* <select name="" id="" defaultValue="" onChange={handleFilter} title="Selecione uma avaliação" required>
+                        <option value="">Placeholder</option>
+                        <option value="positiva">positiva</option>
+                        <option value="regular">regular</option>
+                    </select> */}
+                    <input type="text" name="" id="" placeholder="Placeholder" onChange={handleSearch} />
+                </S.SearchBarDiv>
+                <S.Grid>
+                    {/* {filteredSearch.filter(avaliacao => avaliacao.mediaAvaliacao.toLocaleUpperCase().includes(filter.toLocaleLowerCase())).map(empresa => {
+                        return <CompanyCard empresa={empresa} key={empresa.id} />})} */}
+
+                    {filteredSearch.map(empresa => <CompanyCard key={empresa.id} empresa={empresa} />)}
+                </S.Grid>
             </S.Container>
-            <br />
-            {CompanyData.map(empresa => <CompanyCard key={empresa.nome} empresa={empresa} />)}
-            <br />
-            <TagComponent variant="PCDs" textSize="medium" text="Está empresa possui vagas para PCDs" />
-            <br />
-            <NewFeedbackButton />
-            <br />
-        </>
+
+            <Footer />
+        </S.PageContainer>
     )
 }
