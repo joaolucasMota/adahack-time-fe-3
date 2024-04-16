@@ -12,25 +12,23 @@ import { Footer } from "../../components/Footer";
 export const HomePage = () => {
 
     const [search, setSearch] = useState('');
+    const [selectedAvaliation, setSelectedAvaliation] = useState('Todas as empresas');
+    const [companyData, setCompanyData] = useState<EmpresaProps[]>([]);
 
-    // const [filter, setFilter] = useState('');
 
-    const [CompanyData, setCompanyData] = useState<EmpresaProps[]>([]);
-
-    const filteredSearch = (search != '')
-    ? CompanyData.filter(empresa => empresa.nome.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
-    : CompanyData;
-
-    // function handleFilter(selectedValue: ChangeEvent<HTMLSelectElement>) {
-    //     const filter = selectedValue.target.value;
-    //     console.log(filter);
-    //     setFilter(filter);
-    // }
-
+    const handleFilterValue = (selectedValue: ChangeEvent<HTMLSelectElement>) => {
+        setSelectedAvaliation(selectedValue.target.value);
+    };
     function handleSearch(event: ChangeEvent<HTMLInputElement>) {
         const query = event.target.value;
         setSearch(query);
     }
+    const filteredSearch = companyData.filter(empresa =>
+        empresa.nome.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    ).filter(empresa =>
+        selectedAvaliation === "Todas as empresas" || empresa.mediaAvaliacao === selectedAvaliation
+    );
+
 
     useEffect(() => {
         async function fetchData() {
@@ -38,35 +36,38 @@ export const HomePage = () => {
                 const response = await axios.get(BASE_URL);
                 setCompanyData(response.data);
             } catch (error) {
-                console.log("Erro na requisição:", error);
+                console.error("Erro na requisição:", error);
             }
-        } fetchData();
-    }, [CompanyData]);
+        }
+        fetchData();
+    },[]);
 
     return (
         <S.PageContainer>
             <Header />
-            <SectionHeader 
+            <SectionHeader
                 page="home"
                 mainText="Empresas"
                 subText="Que Apoiam a Inclusão e Diversidade"
             />
-            
             <S.Container>
                 <S.SearchBarDiv>
-                    {/* // Rascunho da ideia  */}
-                    {/* <select name="" id="" defaultValue="" onChange={handleFilter} title="Selecione uma avaliação" required>
-                        <option value="">Placeholder</option>
-                        <option value="positiva">positiva</option>
-                        <option value="regular">regular</option>
-                    </select> */}
+                    <select name="" id="" defaultValue="" onChange={handleFilterValue} title="Selecione uma avaliação" required>
+                        <option value="Todas as empresas">Todas as empresas</option>
+                        <option value="positiva">Positiva</option>
+                        <option value="regular">Regular</option>
+                        <option value="neutra">Neutra</option>
+                        <option value="negativa">Negativa</option>
+                    </select>
                     <input type="text" name="" id="" placeholder="Placeholder" onChange={handleSearch} />
                 </S.SearchBarDiv>
                 <S.Grid>
-                    {/* {filteredSearch.filter(avaliacao => avaliacao.mediaAvaliacao.toLocaleUpperCase().includes(filter.toLocaleLowerCase())).map(empresa => {
-                        return <CompanyCard empresa={empresa} key={empresa.id} />})} */}
-
-                    {filteredSearch.map(empresa => <CompanyCard key={empresa.id} empresa={empresa} />)}
+                {filteredSearch.length > 0 && (
+                        filteredSearch.map(empresa => (
+                            <CompanyCard key={empresa.id} empresa={empresa} />
+                        ))
+                )}
+                {filteredSearch.length === 0 && <p>Nenhuma empresa encontrada.</p>}
                 </S.Grid>
             </S.Container>
 
