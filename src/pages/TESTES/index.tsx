@@ -6,12 +6,17 @@ import axios from "axios";
 
 import { NewFeedbackButton } from "../../components/NewFeedbackButton";
 import { SectionHeader } from "../../components/SectionHeader";
-import { TagComponent } from "../../components/TagComponent";
-import { CompanyCard } from "../../components/CompanyCard";
-import { CardVagas } from "../../components/CardVagas";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
+// import { TagComponent } from "../../components/TagComponent";
+// import { CompanyCard } from "../../components/CompanyCard";
+// import { CardVagas } from "../../components/CardVagas";
+// import { Header } from "../../components/Header";
+// import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
+import { Header } from "../../components/Header";
+import { CompanyCard } from "../../components/CompanyCard";
+import { Footer } from "../../components/Footer";
+import { TagComponent } from "../../components/TagComponent";
+import { CardVagas } from "../../components/cardVagas";
 
 // TODO: CardFeedBack Error
 // import { CardFeedBack } from "../../components/CardFeedback";
