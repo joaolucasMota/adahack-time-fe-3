@@ -6,6 +6,7 @@ import { HomePage } from "../pages/HomePage";
 
 // Página de testes de componentes
 import { TestComponentPage } from "../pages/TESTES";
+import { LoginPage } from "../pages/LoginPage";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,11 @@ export const router = createBrowserRouter([
     {
         path: "/Empresa/:id",
         element: <CompanyPage />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/login",
+        element: <LoginPage />,
         errorElement: <ErrorPage />,
     },
     {
