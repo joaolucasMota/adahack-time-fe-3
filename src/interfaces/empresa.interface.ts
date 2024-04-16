@@ -23,11 +23,10 @@ export interface IFeedback {
   }
 
   export interface IVaga {
-    id: number;
+    id: string;
     dataPublicacao: string;
     nomeVaga: string;
     salario: string;
-    aceitaPCD: boolean;
     quantidadeVagas: string;
+    aceitaPCD: boolean;
   }
-
