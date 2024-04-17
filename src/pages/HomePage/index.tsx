@@ -9,6 +9,7 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import {useQuery} from '@tanstack/react-query'
 import { Loading } from "../../components/Loading";
+import { EmpresaProps } from "../../@types/types";
 
 export const HomePage = () => {
 
@@ -59,7 +60,7 @@ export const HomePage = () => {
                     <input type="text" name="" id="" placeholder="Placeholder" onChange={handleSearch} />
                 </S.SearchBarDiv>
                 <S.Grid>
-                    {data ? filteredSearch.map((empresa: { id: any; }) => <CompanyCard key={empresa.id} empresa={empresa} />): <Loading/>}
+                    {data ? filteredSearch.map((empresa:EmpresaProps) => <CompanyCard key={empresa.id} empresa={empresa} />): <Loading/>}
                 </S.Grid>
             </S.Container>
                 : <Loading/>

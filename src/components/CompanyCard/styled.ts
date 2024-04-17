@@ -20,6 +20,7 @@ export const Container = styled.div`
     border-radius: 8px;
     max-width: 320px;
     padding: 1em;
+    height: 100%;
 
     @media screen and (max-width: 800px)
     {
