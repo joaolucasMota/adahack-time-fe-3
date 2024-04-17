@@ -16,7 +16,7 @@ O layout da aplicação está disponível no Figma:
 
 [![Static Badge](https://img.shields.io/badge/Acessar_Layout-Figma-2304D361)](https://www.figma.com/file/MbbxQeL72GFB4CvAjdGiGO/Projeto-Hackathon---Corp-Solutions?type=design&node-id=2197%3A3&mode=design&t=k4f5WlzuX1WF8h1u-1)
 
-[ADICIONAR AQUI SCREENSHOTS DO PROJETO]
+![Tela inicial](./readme/screenshots/tela_inicial.png)
 
 ## 🚀 Como executar o projeto
 
