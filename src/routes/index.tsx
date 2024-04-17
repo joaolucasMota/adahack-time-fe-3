@@ -7,7 +7,8 @@ import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
 
 // Página de testes de componentes
-import { TestComponentPage } from "../pages/TESTES";
+// import { TestComponentPage } from "../pages/TESTES";
+import { FormularioFeedback } from "../components/FeedbackForm";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
         element: <CompanyPage />,
         errorElement: <ErrorPage />,
     },
+
     {
         path: "/login",
         element: <LoginPage />,
