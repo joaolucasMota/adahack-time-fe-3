@@ -1,4 +1,3 @@
-import { EmpresaProps } from "../../@types/types";
 import { ChangeEvent, useState } from "react";
 import { BASE_URL } from "../../util/api";
 import * as S from "./styled";
@@ -6,10 +5,12 @@ import axios from "axios";
 
 import { SectionHeader } from "../../components/SectionHeader";
 import { CompanyCard } from "../../components/CompanyCard";
-import { Loading } from "../../components/Loading";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import {useQuery} from '@tanstack/react-query'
+import { Loading } from "../../components/Loading";
+import { EmpresaProps } from "../../@types/types";
+import { InputComponent } from "../../components/Input";
 
 export const HomePage = () => {
 
@@ -50,14 +51,12 @@ export const HomePage = () => {
             <S.Container>
                 <S.SearchBarDiv>
                     {/* // Rascunho da ideia  */}
-                    <select name="avaliacao" id="avaliacao" defaultValue=""  title="Selecione uma avaliação" required>
+                    {/* <select name="" id="" defaultValue="" onChange={handleFilter} title="Selecione uma avaliação" required>
                         <option value="">Placeholder</option>
                         <option value="positiva">positiva</option>
-                        <option value="negativa">negativa</option>
                         <option value="regular">regular</option>
-                        <option value="neutra">neutra</option>
-                    </select>
-                    <input type="text" name="search" id="search" placeholder="Placeholder" onChange={handleSearch} />
+                    </select> */}
+                    <InputComponent type="text" placeholder="Nome empresa..." onChange={handleSearch} />
                 </S.SearchBarDiv>
                 <S.Grid>
                     {data ? filteredSearch.map((empresa:EmpresaProps) => <CompanyCard key={empresa.id} empresa={empresa} />): <Loading/>}

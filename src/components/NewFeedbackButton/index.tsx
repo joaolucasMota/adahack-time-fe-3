@@ -5,7 +5,7 @@ import "./style.css";
 
 export const NewFeedbackButton = () => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(true);
 
     // Usar ao final do submit
     // setIsModalOpen(false);

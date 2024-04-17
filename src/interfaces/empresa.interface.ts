@@ -19,7 +19,7 @@ export interface IFeedback {
     qtdVagas: number;
     pcd: boolean;
     feedbacks: IFeedback[];
-    Vagas: IVaga[]
+    vagas: IVaga[];
   }
 
   export interface IVaga {
@@ -28,5 +28,6 @@ export interface IFeedback {
     nomeVaga: string;
     salario: string;
     quantidadeVagas: string;
+    vagaAfirmativa: boolean;
     aceitaPCD: boolean;
   }

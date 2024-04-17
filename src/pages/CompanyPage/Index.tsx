@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom"
 import { BASE_URL } from "../../util/api"
 import { TagFeedback } from "../../components/TagFeedback"
 import { TagComponent } from "../../components/TagComponent"
+import { NewFeedbackButton } from "../../components/NewFeedbackButton"
 
 export const CompanyPage = () => {
 
@@ -52,6 +53,10 @@ export const CompanyPage = () => {
                     }
                 </S.CompanyInfoTagsContainer>
             </S.CompanyInfoContainer>
+
+            <NewFeedbackButton />
+
+            
 
             <Footer />
         </S.PageContainer>

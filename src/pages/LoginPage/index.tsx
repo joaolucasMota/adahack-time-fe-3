@@ -22,7 +22,7 @@ export const LoginPage = () => {
             await signInWithEmailAndPassword(auth, email, password);
             navigate('/');
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     };
     return (

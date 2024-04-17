@@ -1,4 +1,4 @@
-import { IVaga } from "../interfaces/empresa.interface"
+import { IFeedback, IVaga } from "../interfaces/empresa.interface"
 
 declare type EmpresaProps = {
     id: string,
@@ -20,4 +20,12 @@ declare interface VagaProps {
     salario: string,
     quantidadeVagas: string,
     aceitaPCD: boolean,
+}
+declare interface FeedbackProps {
+    nome: string;
+    data: string;
+    descricao: string;
+    nivelInclusao: 'baixo' | 'regular' | 'alto';
+    nivelDiversidade: 'baixo' | 'regular' | 'alto';
+    apoioPCD: boolean;
 }
