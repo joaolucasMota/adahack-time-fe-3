@@ -15,7 +15,7 @@ export type IconVariant =
 interface ITagComponentProps {
     variant: IconVariant,
     textSize?: TextSize,
-    text: string,
+    text?: string,
 }
 
 export const TagComponent = ( { variant, text, textSize }:ITagComponentProps ) => {
