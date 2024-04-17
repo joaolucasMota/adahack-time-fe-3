@@ -5,7 +5,8 @@ import { ErrorPage } from "../pages/ErrorPage/Index";
 import { HomePage } from "../pages/HomePage";
 
 // Página de testes de componentes
-import { TestComponentPage } from "../pages/TESTES";
+// import { TestComponentPage } from "../pages/TESTES";
+import { FormularioFeedback } from "../components/FeedbackForm";
 
 export const router = createBrowserRouter([
     {
@@ -18,9 +19,10 @@ export const router = createBrowserRouter([
         element: <CompanyPage />,
         errorElement: <ErrorPage />,
     },
-    {
-        path: "/Testes",
-        element: <TestComponentPage />,
-        errorElement: <ErrorPage />,
-    },
+    // {
+    //     path: "/Testes",
+    //     element: <TestComponentPage />,
+    //     errorElement: <ErrorPage />,
+    // },
+
 ])
