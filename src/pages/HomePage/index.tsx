@@ -1,3 +1,4 @@
+import { EmpresaProps } from "../../@types/types";
 import { ChangeEvent, useState } from "react";
 import { BASE_URL } from "../../util/api";
 import * as S from "./styled";
@@ -5,11 +6,10 @@ import axios from "axios";
 
 import { SectionHeader } from "../../components/SectionHeader";
 import { CompanyCard } from "../../components/CompanyCard";
+import { Loading } from "../../components/Loading";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import {useQuery} from '@tanstack/react-query'
-import { Loading } from "../../components/Loading";
-import { EmpresaProps } from "../../@types/types";
 
 export const HomePage = () => {
 
