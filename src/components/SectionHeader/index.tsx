@@ -6,8 +6,8 @@ export type SectionPage = 'home' | 'settings' | 'company';
 
 interface ISectionHeaderProps {
     page: SectionPage,
-    mainText: string,
-    subText: string
+    mainText?: string,
+    subText?: string
 }
 
 export const SectionHeader  = ( { page, mainText, subText }:ISectionHeaderProps ) => {

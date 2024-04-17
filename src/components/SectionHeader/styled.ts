@@ -8,6 +8,7 @@ export const Container = styled.div`
 
     padding: 2em 2em 1em 2em;
     border-bottom: 2px solid;
+    margin-bottom: 2em;
     max-width: 100%;
 
     * 
