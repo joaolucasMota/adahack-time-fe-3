@@ -33,7 +33,7 @@ export const RegisterPage = () => {
         const { email, password } = data;
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            navigate('/');
+            navigate('/home');
         } catch (error) {
             console.log(error);
         }

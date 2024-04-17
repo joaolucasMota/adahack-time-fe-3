@@ -9,9 +9,11 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { useParams } from "react-router-dom"
 
-import { TagFeedback } from "../../components/TagFeedback"
-import { TagComponent } from "../../components/TagComponent"
 import { NewFeedbackButton } from "../../components/NewFeedbackButton"
+import { TagComponent } from "../../components/TagComponent"
+import { CardFeedBack } from "../../components/CardFeedback"
+import { TagFeedback } from "../../components/TagFeedback"
+import { CardVagas } from "../../components/CardVagas"
 
 export const CompanyPage = () => {
 
@@ -39,26 +41,37 @@ export const CompanyPage = () => {
                 subText={CompanyData?.setor}
             />
 
-            {/* Conteudo */}
+            <S.Main>
+                <S.CompanyInfoContainer>
+                    <h2>Sobre a Empresa:</h2>
+                    <pre>{CompanyData?.descricao}</pre>
+                    <S.CompanyInfoTagsContainer>
+                        <TagFeedback variant={CompanyData?.mediaAvaliacao}/>
+                        <TagComponent variant="endereco" text={CompanyData?.local} />
+                        <TagComponent variant="vagas" text={`${String(CompanyData?.qtdVagas)} vaga(s)`} />
+                        {
+                            CompanyData?.pcd && <TagComponent variant="PCDs" text="Está empresa possui vagas para PCDs" />
+                        }
+                    </S.CompanyInfoTagsContainer>
+                </S.CompanyInfoContainer>
 
-            <S.CompanyInfoContainer>
-                <h1>Sobre a Empresa:</h1>
-                <pre>{CompanyData?.descricao}</pre>
-                <S.CompanyInfoTagsContainer>
-                    <TagFeedback variant={CompanyData?.mediaAvaliacao}/>
-                    <TagComponent variant="endereco" text={CompanyData?.local} />
-                    <TagComponent variant="vagas" text={`${String(CompanyData?.qtdVagas)} vaga(s)`} />
-                    {
-                        CompanyData?.pcd && <TagComponent variant="PCDs" text="Está empresa possui vagas para PCDs" />
-                    }
-                </S.CompanyInfoTagsContainer>
-            </S.CompanyInfoContainer>
+                <S.DivSection>
+                    <h2>Feedback dos usuários:</h2>
+                    <NewFeedbackButton />
+                </S.DivSection>
 
-            <NewFeedbackButton />
-            
-            {/* <FeedbackSection key={empresa.id} company={empresa} /> */}
+                <S.GridFeedback>
+                    {CompanyData?.feedbacks.slice(0,6).map(feedback => <CardFeedBack key={feedback.id} feedback={feedback} />)}
+                </S.GridFeedback>
 
-            {/* {CompanyData.map(empresa => <CardFee key={empresa.id} company={empresa} />)} */}
+                <S.DivSection>
+                    <h2>Vagas disponiveis:</h2>
+                </S.DivSection>
+
+                <S.GridVagas>
+                    {CompanyData?.vagas.map(vaga => <CardVagas key={vaga.id} vaga={vaga} />)}
+                </S.GridVagas>
+            </S.Main>
 
             <Footer />
         </S.PageContainer>

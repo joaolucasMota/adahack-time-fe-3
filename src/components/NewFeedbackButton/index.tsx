@@ -2,6 +2,7 @@ import { MessageCirclePlus, X } from "lucide-react"
 import { useState } from "react"
 import * as S from "./styled"
 import "./style.css";
+import { FeedbackForm } from "../FeedbackForm";
 
 export const NewFeedbackButton = () => {
 
@@ -27,6 +28,7 @@ export const NewFeedbackButton = () => {
                         <X size={32} />
                     </div>
                     {/* Conteudo do modal */}
+                    <FeedbackForm />
                 </div>
             </div>
         </>

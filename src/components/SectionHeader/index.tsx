@@ -16,7 +16,7 @@ export const SectionHeader  = ( { page, mainText, subText }:ISectionHeaderProps 
             {   
                 (page == 'home') ? <div><Building size={42} absoluteStrokeWidth /></div> :
                 (page == 'settings') ? <div><Settings size={42} absoluteStrokeWidth /></div> :
-                <Link to={"/"}><CircleArrowLeft size={42} absoluteStrokeWidth /></Link>
+                <Link to={"/home"}><CircleArrowLeft size={42} absoluteStrokeWidth /></Link>
             }
             <div>
                 <h1>{mainText}</h1>

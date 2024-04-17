@@ -2,6 +2,7 @@
 {
     background-color: #0008;
     position: fixed;
+    margin: 0 -2em;
     height: 100svh;
     width: 100%;
     top: 0;
