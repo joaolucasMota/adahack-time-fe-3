@@ -1,6 +1,6 @@
 import { EmpresaProps } from "../../@types/types"
 import { useEffect, useState } from "react"
-// import { BASE_URL } from "../../util/api"
+import { BASE_URL } from "../../util/api"
 import * as S from "./styled"
 import axios from "axios"
 
@@ -8,7 +8,7 @@ import { SectionHeader } from "../../components/SectionHeader"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { useParams } from "react-router-dom"
-import { BASE_URL } from "../../util/api"
+
 import { TagFeedback } from "../../components/TagFeedback"
 import { TagComponent } from "../../components/TagComponent"
 import { NewFeedbackButton } from "../../components/NewFeedbackButton"
@@ -55,8 +55,10 @@ export const CompanyPage = () => {
             </S.CompanyInfoContainer>
 
             <NewFeedbackButton />
-
             
+            {/* <FeedbackSection key={empresa.id} company={empresa} /> */}
+
+            {/* {CompanyData.map(empresa => <CardFee key={empresa.id} company={empresa} />)} */}
 
             <Footer />
         </S.PageContainer>

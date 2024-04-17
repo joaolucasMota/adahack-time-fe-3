@@ -18,6 +18,7 @@ declare interface VagaProps {
     dataPublicacao: string,
     nomeVaga: string,
     salario: string,
+    vagaAfirmativa: boolean,
     quantidadeVagas: string,
     aceitaPCD: boolean,
 }

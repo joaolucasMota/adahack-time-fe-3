@@ -28,4 +28,3 @@ export const CardFeedBack:FC<ICardFeedBackProps> = ({feedback}) => {
     </S.Container>
   )
 }
-
