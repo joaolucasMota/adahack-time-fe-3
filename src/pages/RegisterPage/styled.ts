@@ -40,7 +40,7 @@ export const DivLogin = styled.div`
 `;
 
 export const RegisterContainer = styled.div`
-    
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 5rem;
@@ -113,16 +113,4 @@ export const Form = styled.form`
         background-color: var(--green-color);
     }
   }
-`;
-
-
-export const Bottom = styled.div`
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-    @media (max-width: 720px) 
-    {
-    display: none;
-    }
 `;

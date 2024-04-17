@@ -1,36 +1,59 @@
+import * as S from "./styled";
 import { Footer } from "../../components/Footer";
-import { Bottom, Container, DivLogin, DivTitle, Form, RegisterContainer } from "./styled";
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import { USERS_BASE_URL } from "../../util/api";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../services/firebaseConnection";
+import { useNavigate } from "react-router-dom";
+
+interface RegisterFormData {
+    nome: string;
+    email: string;
+    password: string;
+    identidadeGenero: string;
+    orientacaoSexual: string;
+    etnia: string;
+    deficiencia: string;
+    religiao: string;
+    statusSocioeconomico: string;
+    idade: string;
+    statusMarital: string;
+    nacionalidade: string;
+    rendaFamiliar: string;
+    nivelEducacao: string;
+    experienciaMigracaoRefugio: string;
+}
 
 
 export const RegisterPage = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm<RegisterFormData>();
 
-    const onSubmit = async (data : any) => {
+    const navigate = useNavigate();
+
+    const onSubmit = async (data: RegisterFormData) => {
+        const { email, password } = data;
         try {
-            const response = await axios.post(USERS_BASE_URL, data);
-            console.log(response.data); 
+            await createUserWithEmailAndPassword(auth, email, password);
+            navigate('/');
         } catch (error) {
-            throw(error); 
+            throw (error)
+
         }
     };
 
     return (
-        <Container>
-            <DivTitle>
+        <S.Container>
+            <S.DivTitle>
                 <h1>Corp Solutions</h1>
-            </DivTitle>
+            </S.DivTitle>
 
 
-            <DivLogin>
-                <RegisterContainer>
+            <S.DivLogin>
+                <S.RegisterContainer>
 
                     <h2>Registre-se</h2>
 
-                    <Form onSubmit={handleSubmit(onSubmit)}>
+                    <S.Form onSubmit={handleSubmit(onSubmit)}>
                         <div>
                             <label>Nome:</label>
                             <input {...register("nome")} type="text" />
@@ -41,7 +64,7 @@ export const RegisterPage = () => {
                         </div>
                         <div>
                             <label>Senha:</label>
-                            <input {...register("senha")} type="password" />
+                            <input {...register("password")} type="password" />
                         </div>
                         <div>
                             <label>Identidade de Gênero:</label>
@@ -198,19 +221,10 @@ export const RegisterPage = () => {
                             </select>
                         </div>
                         <input type="submit" value="Enviar" />
-                    </Form>
-
-
-
-                </RegisterContainer>
-
-                <Bottom>
-                    <Footer />
-                </Bottom>
-
-            </DivLogin>
-
-
-        </Container>
+                    </S.Form>
+                </S.RegisterContainer>
+                <Footer />
+            </S.DivLogin>
+        </S.Container>
     );
 };

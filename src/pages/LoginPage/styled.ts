@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { InputComponent } from "../../components/Input";
 
 export const Container = styled.div`
     display: flex;
@@ -41,7 +40,7 @@ export const DivLogin = styled.div`
 `;
 
 export const LoginContainer = styled.div`
-    
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 5rem;
@@ -92,8 +91,20 @@ export const Form = styled.form`
     }
 `;
 
-export const StyledInputComponent = styled(InputComponent)`
-  margin-bottom: 1rem;
+
+export const Input = styled.input`
+  padding: 1rem;
+  border: 1px solid var(--bg-color-03);
+  border-radius: .5rem;
+  font-size: 1rem;
+  outline: none;
+  &:focus {
+    border-color: var(--bg-color-03);
+    box-shadow: 0 0 5px var(--bg-color-03);
+  }
+  &:first-child {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const RememberPassword = styled.div`
@@ -146,15 +157,4 @@ export const NewAccount = styled.div`
         font-size: 1rem;
         }
   }
-`;
-
-export const Bottom = styled.div`
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-    @media (max-width: 720px) 
-    {
-    display: none;
-    }
 `;

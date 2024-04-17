@@ -1,51 +1,55 @@
+import * as S from "./styled";
+import { useForm } from "react-hook-form";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
-import { InputComponent } from "../../components/Input";
-import { Container, DivLogin, DivTitle, Divider, LoginContainer, NewAccount, RememberPassword, StyledInputComponent, Bottom } from "./styled";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../services/firebaseConnection";
+import { useNavigate } from "react-router-dom";
 
 
 export const LoginPage = () => {
 
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
+    const onSubmit = async (data: any) => {
+        const { email, password } = data;
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate('/');
+        } catch (error) {
+            throw (error)
+        }
+    };
     return (
-        <Container>
-            <DivTitle>
+        <S.Container>
+            <S.DivTitle>
                 <h1>Corp Solutions</h1>
-            </DivTitle>
-
-
-            <DivLogin>
-                <LoginContainer>
-
+            </S.DivTitle>
+            <S.DivLogin>
+                <S.LoginContainer>
                     <h2>Boas vindas</h2>
-                    <StyledInputComponent type="email" placeholder="Email:" />
-                    <InputComponent type="password" placeholder="Senha:" />
-                    <RememberPassword>
-                        <a>Esqueci minha senha</a>
-                    </RememberPassword>
-                    <Button text="ENTRAR" to={""} />
-                    <Divider />
-
-                    <NewAccount>
+                    <S.Form onSubmit={handleSubmit(onSubmit)}>
+                        <S.Input type="email" placeholder="Email:" {...register("email")} />
+                        <S.Input type="password" placeholder="Senha:" {...register("password")} />
+                        <S.RememberPassword>
+                            <a>Esqueci minha senha</a>
+                        </S.RememberPassword>
+                        <input value="ENTRAR" type="submit" />
+                    </S.Form>
+                    <S.Divider />
+                    <S.NewAccount>
                         <h3>
                             Ainda não possui conta?
                         </h3>
-
                         <p>
                             É fácil, clique no botão a baixo e crie sua conta:
                         </p>
-
                         <Button text="Criar conta" to="/register" />
-                    </NewAccount>
-
-                </LoginContainer>
-
-                <Bottom>
-                    <Footer />
-                </Bottom>
-
-            </DivLogin>
-
-        </Container>
+                    </S.NewAccount>
+                </S.LoginContainer>
+                <Footer />
+            </S.DivLogin>
+        </S.Container>
     );
 };
