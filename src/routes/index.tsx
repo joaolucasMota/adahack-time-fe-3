@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { CompanyPage } from "../pages/CompanyPage/Index";
 import { ErrorPage } from "../pages/ErrorPage/Index";
 import { HomePage } from "../pages/HomePage";
+import { LoginPage } from "../pages/LoginPage";
+import { RegisterPage } from "../pages/RegisterPage";
 
 // Página de testes de componentes
 import { TestComponentPage } from "../pages/TESTES";
@@ -16,6 +18,16 @@ export const router = createBrowserRouter([
     {
         path: "/Empresa/:id",
         element: <CompanyPage />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/login",
+        element: <LoginPage />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/register",
+        element: <RegisterPage />,
         errorElement: <ErrorPage />,
     },
     {
