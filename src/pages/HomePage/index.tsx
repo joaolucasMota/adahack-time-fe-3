@@ -1,5 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { EmpresaProps } from "../../@types/types";
+import { ChangeEvent, useState } from "react";
 import { BASE_URL } from "../../util/api";
 import * as S from "./styled";
 import axios from "axios";
@@ -8,18 +7,23 @@ import { SectionHeader } from "../../components/SectionHeader";
 import { CompanyCard } from "../../components/CompanyCard";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import {useQuery} from '@tanstack/react-query'
+import { Loading } from "../../components/Loading";
 
 export const HomePage = () => {
 
-    const [search, setSearch] = useState('');
+    const {data} = useQuery({ 
+        queryKey: [''], 
+        queryFn: async () => await axios.get(BASE_URL),
+        select(data) {
+            return data.data
+        }
+    })
 
-    // const [filter, setFilter] = useState('');
+    const [search, setSearch] = useState<string>('');
 
-    const [CompanyData, setCompanyData] = useState<EmpresaProps[]>([]);
+    const filteredSearch = (search != "") ? data.filter((empresa: { nome: string; }) => empresa.nome.toLowerCase().includes(search.toLowerCase())) : data
 
-    const filteredSearch = (search != '')
-    ? CompanyData.filter(empresa => empresa.nome.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
-    : CompanyData;
 
     // function handleFilter(selectedValue: ChangeEvent<HTMLSelectElement>) {
     //     const filter = selectedValue.target.value;
@@ -32,17 +36,6 @@ export const HomePage = () => {
         setSearch(query);
     }
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get(BASE_URL);
-                setCompanyData(response.data);
-            } catch (error) {
-                console.log("Erro na requisição:", error);
-            }
-        } fetchData();
-    }, [CompanyData]);
-
     return (
         <S.PageContainer>
             <Header />
@@ -51,7 +44,8 @@ export const HomePage = () => {
                 mainText="Empresas"
                 subText="Que Apoiam a Inclusão e Diversidade"
             />
-            
+            {
+                data ? 
             <S.Container>
                 <S.SearchBarDiv>
                     {/* // Rascunho da ideia  */}
@@ -65,12 +59,11 @@ export const HomePage = () => {
                     <input type="text" name="" id="" placeholder="Placeholder" onChange={handleSearch} />
                 </S.SearchBarDiv>
                 <S.Grid>
-                    {/* {filteredSearch.filter(avaliacao => avaliacao.mediaAvaliacao.toLocaleUpperCase().includes(filter.toLocaleLowerCase())).map(empresa => {
-                        return <CompanyCard empresa={empresa} key={empresa.id} />})} */}
-
-                    {filteredSearch.map(empresa => <CompanyCard key={empresa.id} empresa={empresa} />)}
+                    {data ? filteredSearch.map((empresa: { id: any; }) => <CompanyCard key={empresa.id} empresa={empresa} />): <Loading/>}
                 </S.Grid>
             </S.Container>
+                : <Loading/>
+            }
 
             <Footer />
         </S.PageContainer>

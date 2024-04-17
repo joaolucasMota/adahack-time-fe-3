@@ -6,16 +6,19 @@ import axios from "axios";
 
 import { NewFeedbackButton } from "../../components/NewFeedbackButton";
 import { SectionHeader } from "../../components/SectionHeader";
-import { TagComponent } from "../../components/TagComponent";
-import { CompanyCard } from "../../components/CompanyCard";
-import { CardVagas } from "../../components/CardVagas";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { CompanyCard } from "../../components/CompanyCard";
 import { Button } from "../../components/Button";
+
 import { TagFeedback } from "../../components/TagFeedback";
 
 // TODO: CardFeedBack Error
 // import { CardFeedBack } from "../../components/CardFeedback";
+
+import { InputComponent } from "../../components/Input";
+import { TagComponent } from "../../components/TagComponent";
+import { CardVagas } from "../../components/CardVagas";
 
 export const TestComponentPage = () => {
 
@@ -29,7 +32,8 @@ export const TestComponentPage = () => {
             } catch (error) {
                 console.log("Erro na requisição:", error);
             }
-        } fetchData();
+        } 
+        fetchData();
     }, [CompanyData]);
 
     return (
@@ -52,7 +56,11 @@ export const TestComponentPage = () => {
             <NewFeedbackButton />
             <br />
             <Button text="Texto do botão" to="/" />
+            <InputComponent type="password"/>
+            <InputComponent type="email"/>
+            <InputComponent type="text"/>
             <br />
+
             <TagFeedback variant="negativa" />
             <TagFeedback variant="positiva" />
             <TagFeedback variant="neutra" />
