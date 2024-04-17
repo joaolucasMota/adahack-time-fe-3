@@ -1,7 +1,23 @@
+import { useState } from "react";
 import { TagComponent } from "../TagComponent";
 import * as S from "./styled";
 
 export const Footer = ( ) =>{
+
+    const [contrast, setContrast] = useState(true);
+
+    const HandleClick = () => {
+        setContrast(!contrast);
+        document.body.classList.toggle('contrast', contrast);
+    }
+
+    const [fontSize, setSize] = useState(true);
+
+    const HandleFontSize = () => {
+        setSize(!fontSize);
+        document.body.classList.toggle('fontSize', fontSize);
+    }
+
     return(
         <S.FooterContainer>
             <S.CompanyName><p>Corp Solutions™ - © 2024 </p></S.CompanyName>
@@ -9,11 +25,11 @@ export const Footer = ( ) =>{
                 <S.Bold><TagComponent variant="acessibilidade" text="Opções de Acessibilidade: " /></S.Bold>
                 
                 <S.FlexDiv>
-                    <button onClick={() => { /*futura função de acessibilidade*/ }}>
+                    <button onClick={HandleFontSize}>
                         <TagComponent variant="tamanho-fonte" text="Alternar tamanho da fonte" />
                     </button>
 
-                    <button onClick={() => { /*futura função de acessibilidade*/ }}>
+                    <button onClick={HandleClick}>
                         <TagComponent variant="contraste" text="Alternar contraste" />
                     </button>
                 </S.FlexDiv>

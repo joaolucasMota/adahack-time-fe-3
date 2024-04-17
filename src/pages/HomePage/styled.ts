@@ -1,3 +1,4 @@
+import { InputComponent } from "../../components/Input";
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
@@ -5,6 +6,13 @@ export const PageContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     min-height: 100svh;
+`;
+
+export const SearchInput = styled(InputComponent)`
+    @media screen and (max-width: 300px) 
+    {
+        width: 90%;
+    }
 `;
 
 export const SearchBarDiv = styled.div`
