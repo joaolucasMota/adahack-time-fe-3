@@ -1,14 +1,18 @@
 import { ButtonHTMLAttributes } from "react"
 import * as S from "./styled"
 
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement>{
-    text: string;
-    to: string;
+
+
+interface IButton {
+    text: string,
+    to: string
+    onClick?: () => void;
 }
 
-export const Button = ( { text, to }:IButton ) => {
+export const Button = ( { text, to, onClick }:IButton ) => {
     return (
-        <S.ButtonContainer to={to} >
+
+        <S.ButtonContainer to={to} onClick={onClick} >
             {text}
         </S.ButtonContainer>
     )

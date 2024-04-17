@@ -1,15 +1,22 @@
 import { InputHTMLAttributes } from "react";
 import { Input } from "./styled";
 
-interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
-    type: string,
+
+interface IInputProps {
+    type: string;
+    placeholder?: string;
+    value?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; 
 }
 
-export const InputComponent = ({ type, ...rest } : IInputProps) => {
+export const InputComponent = ({ type, placeholder, value, onChange, ...rest } : IInputProps) => {
   return (
     <>
       <Input
-        type={type === 'password' ? 'password' : type === 'email' ? 'email' : 'text'}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
         {...rest}
       />
     </>
