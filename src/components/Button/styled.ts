@@ -10,8 +10,13 @@ export const ButtonContainer = styled(Link)`
     border-radius: 8px;
     user-select: none;
     font-weight: bold;
+    text-align: center;
     padding: 1em;
     color: #fff;
+    @media (max-width: 992px) 
+        {
+        font-size: .8em;
+        }
     
     &:hover
     {
