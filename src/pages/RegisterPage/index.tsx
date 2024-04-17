@@ -36,8 +36,7 @@ export const RegisterPage = () => {
             await createUserWithEmailAndPassword(auth, email, password);
             navigate('/');
         } catch (error) {
-            throw (error)
-
+            console.log(error);
         }
     };
     return (
