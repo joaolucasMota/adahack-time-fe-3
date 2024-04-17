@@ -17,7 +17,6 @@ interface IRegisterFormData {
     religiao: string;
     statusSocioeconomico: string;
     idade: string;
-    statusMarital: string;
     nacionalidade: string;
     rendaFamiliar: string;
     nivelEducacao: string;
@@ -50,19 +49,19 @@ export const RegisterPage = () => {
                 <S.RegisterContainer>
                     <h2>Registre-se</h2>
                     <S.Form onSubmit={handleSubmit(onSubmit)}>
-                        <div>
+                        <div title="Como gostaria de ser chamado?">
                             <label>Nome:</label>
                             <input {...register("nome")} type="text" />
                         </div>
-                        <div>
+                        <div title="Informe o seu email">
                             <label>Email:</label>
                             <input {...register("email")} type="email" />
                         </div>
-                        <div>
+                        <div title="Crie uma senha">
                             <label>Senha:</label>
                             <input {...register("password")} type="password" />
                         </div>
-                        <div>
+                        <div title="Informe com qual gênero você se identifica">
                             <label>Identidade de Gênero:</label>
                             <select {...register("identidadeGenero")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -75,7 +74,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerIdentidadeGenero">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Informe a sua orientação sexual">
                             <label>Orientação Sexual:</label>
                             <select {...register("orientacaoSexual")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -91,7 +90,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerOrientacaoSexual">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Informe a sua etnia">
                             <label>Etnia:</label>
                             <select {...register("etnia")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -106,7 +105,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerEtnia">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Você possui alguma deficiência?">
                             <label>Condição de Pessoa com Deficiência (PCD):</label>
                             <select {...register("deficiencia")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -119,7 +118,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerDeficiencia">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Qual a sua religião?">
                             <label>Religião:</label>
                             <select {...register("religiao")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -134,7 +133,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerReligiao">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Em qual classe social você se encaixa?">
                             <label>Status Socioeconômico:</label>
                             <select {...register("statusSocioeconomico")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -144,7 +143,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerSocioeconomico">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Quantos anos você tem?">
                             <label>Idade:</label>
                             <select {...register("idade")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -158,20 +157,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerIdade">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
-                            <label>Status Marital:</label>
-                            <select {...register("statusMarital")} defaultValue="">
-                                <option value="">Selecione...</option>
-                                <option value="solteiro">Solteiro(a)</option>
-                                <option value="casado">Casado(a)</option>
-                                <option value="divorciado">Divorciado(a)</option>
-                                <option value="viuvo">Viúvo(a)</option>
-                                <option value="uniaoEstavel">União Estável</option>
-                                <option value="outroStatusMarital">Outro</option>
-                                <option value="prefiroNaoDizerStatusMarital">Prefiro não dizer</option>
-                            </select>
-                        </div>
-                        <div>
+                        <div title="Qual o seu país de origem?">
                             <label>Nacionalidade:</label>
                             <select {...register("nacionalidade")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -180,7 +166,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerNacionalidade">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Quanto a sua familia recebe de renda mensal?">
                             <label>Renda Familiar:</label>
                             <select {...register("rendaFamiliar")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -193,7 +179,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerRenda">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Qual o seu nível de educação?">
                             <label>Nível de Educação:</label>
                             <select {...register("nivelEducacao")} defaultValue="">
                                 <option value="">Selecione...</option>
@@ -205,7 +191,7 @@ export const RegisterPage = () => {
                                 <option value="prefiroNaoDizerEducacao">Prefiro não dizer</option>
                             </select>
                         </div>
-                        <div>
+                        <div title="Experiência de Migração ou Refúgio">
                             <label>Experiência de Migração ou Refúgio:</label>
                             <select {...register("experienciaMigracaoRefugio")} defaultValue="">
                                 <option value="">Selecione...</option>
