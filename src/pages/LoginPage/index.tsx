@@ -6,13 +6,17 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 import { useNavigate } from "react-router-dom";
 
+interface ILoginProps{
+    email: string;
+    password: string;
+}
 
 export const LoginPage = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm<ILoginProps>();
     const navigate = useNavigate();
 
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (data: ILoginProps) => {
         const { email, password } = data;
         try {
             await signInWithEmailAndPassword(auth, email, password);

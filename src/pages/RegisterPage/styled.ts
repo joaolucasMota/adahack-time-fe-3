@@ -102,9 +102,11 @@ export const Form = styled.form`
     text-align: center;
     padding: 1em;
     color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
     @media (max-width: 992px) 
         {
-        font-size: .8em;
+        font-size: 1em;
         }
     
     &:hover

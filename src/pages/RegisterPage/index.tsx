@@ -4,8 +4,9 @@ import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button";
 
-interface RegisterFormData {
+interface IRegisterFormData {
     nome: string;
     email: string;
     password: string;
@@ -26,11 +27,11 @@ interface RegisterFormData {
 
 export const RegisterPage = () => {
 
-    const { register, handleSubmit } = useForm<RegisterFormData>();
+    const { register, handleSubmit } = useForm<IRegisterFormData>();
 
     const navigate = useNavigate();
 
-    const onSubmit = async (data: RegisterFormData) => {
+    const onSubmit = async (data: IRegisterFormData) => {
         const { email, password } = data;
         try {
             await createUserWithEmailAndPassword(auth, email, password);
@@ -40,19 +41,14 @@ export const RegisterPage = () => {
 
         }
     };
-
     return (
         <S.Container>
             <S.DivTitle>
                 <h1>Corp Solutions</h1>
             </S.DivTitle>
-
-
             <S.DivLogin>
                 <S.RegisterContainer>
-
                     <h2>Registre-se</h2>
-
                     <S.Form onSubmit={handleSubmit(onSubmit)}>
                         <div>
                             <label>Nome:</label>
@@ -221,6 +217,7 @@ export const RegisterPage = () => {
                             </select>
                         </div>
                         <input type="submit" value="Enviar" />
+                        <Button text="VOLTAR" to={"/login"}/>
                     </S.Form>
                 </S.RegisterContainer>
                 <Footer />
