@@ -4,6 +4,12 @@ import styled from "styled-components";
 export const CardLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+
+    &:hover
+    {
+        outline: 1px solid var(--orange-color);
+        border-radius: 8px;
+    }
 `;
 
 export const Container = styled.div`
