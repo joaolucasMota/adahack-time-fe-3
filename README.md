@@ -79,7 +79,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 👨‍💻 Membros da Equipe
 
-Durante o desenvolvimento do projeto, enfrentamos o desafio de gerenciar eficientemente o tempo, especialmente devido aos prazos rigorosos estabelecidos. Para superar essa dificuldade, adotamos estratégias de planejamento e acompanhamento das tarefas utilizando o recurso Projects do GitHub. Além disso, realizamos reuniões diárias às 19h no canal designado para nossa turma no servidor da Ada, promovendo a comunicação e a colaboração entre os membros da equipe.
+Durante o desenvolvimento do projeto, enfrentamos o desafio de gerenciar eficientemente o tempo, especialmente devido aos prazos rigorosos estabelecidos. Para superar essa dificuldade, adotamos estratégias de planejamento e acompanhamento das tarefas utilizando o recurso [**Projects**](https://github.com/users/joaolucasMota/projects/4) do GitHub. Além disso, realizamos reuniões diárias às 19h no canal designado para nossa turma no servidor da Ada, promovendo a comunicação e a colaboração entre os membros da equipe.
 
 Essas práticas fortaleceram a coesão da equipe, melhoraram a qualidade do código e contribuíram significativamente para o sucesso do projeto, permitindo que enfrentássemos os desafios de forma eficaz e entregássemos uma solução de alta qualidade dentro dos prazos estabelecidos.
 
