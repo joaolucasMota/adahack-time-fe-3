@@ -6,12 +6,14 @@ export default createGlobalStyle`
         --bg-color-01:      #FFFFFF;
         --bg-color-02:      #FCF5EB;
         --bg-color-03:      #D5C4A1;
-        --text-color-01:    #3c3836;
+        --text-color-01:    #3C3836;
         --dark-green-color: #427B58;
         --green-color:      #689D6A;
         --blue-color:       #458588;
         --yellow-color:     #D79921;
         --red-color:        #CC241D;
+        --purple-color:     #B16286;
+        --orange-color:     #D65D0E;
     }
 
     .contrast
@@ -21,6 +23,8 @@ export default createGlobalStyle`
         --blue-color:       #244547;
         --yellow-color:     #543C0D;
         --red-color:        #811612;
+        --purple-color:     #633147;
+        --orange-color:     #6E3007;
     }
 
     ::selection
