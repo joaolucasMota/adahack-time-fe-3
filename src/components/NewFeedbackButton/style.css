@@ -1,0 +1,31 @@
+.ModalContainer
+{
+    background-color: #0008;
+    position: fixed;
+    height: 100svh;
+    width: 100%;
+    top: 0;
+}
+
+.close
+{
+    display: none;
+}
+
+.ModalButton
+{
+    display: flex;
+    border: 2px solid var(--bg-color-03);
+    background-color: var(--bg-color-02);
+    border-radius: 8px;
+    cursor: pointer;
+    position: fixed;
+    padding: .5em;
+    right: 1em;
+    top: 1em;
+}
+
+.ModalButton:hover
+{
+    filter: brightness(.75);
+}

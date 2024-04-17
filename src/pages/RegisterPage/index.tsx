@@ -23,7 +23,6 @@ interface IRegisterFormData {
     experienciaMigracaoRefugio: string;
 }
 
-
 export const RegisterPage = () => {
 
     const { register, handleSubmit } = useForm<IRegisterFormData>();

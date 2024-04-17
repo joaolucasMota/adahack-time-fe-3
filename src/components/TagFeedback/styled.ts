@@ -1,6 +1,6 @@
 import { styled, css } from "styled-components";
 
-export type FeedbackVariant = 'positiva' | 'regular' | 'negativa' | 'neutra';
+export type FeedbackVariant = 'positiva' | 'regular' | 'negativa' | 'neutra' | 'error';
 
 type FeedbackProps = {
   variant: FeedbackVariant;
@@ -11,6 +11,7 @@ const feedbackVariant = {
     regular: 'var(--yellow-color)',
     negativa: 'var(--red-color)',
     neutra: 'var(--blue-color)',
+    error: 'var(--purple-color)',
 }
 
 export const Container = styled.div`

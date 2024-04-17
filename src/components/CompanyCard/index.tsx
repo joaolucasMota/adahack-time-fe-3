@@ -4,7 +4,7 @@ import { TagFeedback } from "../TagFeedback"
 import * as S from "./styled"
 
 interface IEmpresaProps {
-    empresa: EmpresaProps | any
+    empresa: EmpresaProps
 }
 
 export const CompanyCard = ( { empresa }:IEmpresaProps ) => {

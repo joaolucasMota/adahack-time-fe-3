@@ -1,7 +1,7 @@
 import * as S from "./styled"
 import { FC } from "react"
 import { EmpresaProps } from "../../@types/types"
-import { CardFeedBack } from "../cardFeedback"
+import { CardFeedBack } from "../CardFeedback"
 
 
 interface IFeedbackSectionProps{
