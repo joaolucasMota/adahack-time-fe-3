@@ -52,7 +52,7 @@ export const HomePage = () => {
                         <option value="neutra">Neutra</option>
                         <option value="negativa">Negativa</option>
                     </S.Select>
-                    <InputComponent type="text" placeholder="Nome empresa..." onChange={handleSearch} />
+                    <S.SearchInput type="text" placeholder="Nome empresa..." onChange={handleSearch} />
                 </S.SearchBarDiv>
                 <S.Grid>
                     {isLoading && <Loading />}

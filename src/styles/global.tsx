@@ -27,6 +27,21 @@ export default createGlobalStyle`
         --orange-color:     #6E3007;
     }
 
+    .fontSize p
+    {
+        font-size: 24px;
+    }
+
+    .fontSize h1
+    {
+        font-size: 32px;
+    }
+
+    .fontSize h2
+    {
+        font-size: 28px;
+    }
+
     ::selection
     {
         background-color: #3c383680;
