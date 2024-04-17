@@ -20,7 +20,7 @@ export const CardVagas = ( { vaga }:IVaga ) => {
         
         <S.HR />
 
-        <S.VagaAfirmativa>Vaga afirmativa para negros & pardos</S.VagaAfirmativa>
+        <S.VagaAfirmativa>{vaga.vagaAfirmativa ? "Vaga afirmativa para negros & pardos" : "Todos os candidatos qualificados são bem-vindos a se candidatar"}</S.VagaAfirmativa>
 
         <S.DivInformacoes>
             <TagComponent variant='PCDs' text={ vaga.aceitaPCD ? "Aceita PCD" : "Não aceita PCD" } />
