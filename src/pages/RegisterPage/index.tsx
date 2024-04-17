@@ -24,7 +24,6 @@ interface IRegisterFormData {
     experienciaMigracaoRefugio: string;
 }
 
-
 export const RegisterPage = () => {
 
     const { register, handleSubmit } = useForm<IRegisterFormData>();
@@ -37,8 +36,7 @@ export const RegisterPage = () => {
             await createUserWithEmailAndPassword(auth, email, password);
             navigate('/');
         } catch (error) {
-            throw (error)
-
+            console.error(error);
         }
     };
     return (
