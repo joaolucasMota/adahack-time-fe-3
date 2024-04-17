@@ -53,3 +53,23 @@ export const Grid = styled.div`
         padding: 0 1em;
     }
 `;
+
+export const Select = styled.select`
+    border: 1px solid var(--bg-color-03);
+    background-color: var(--bg-color-01);
+    border-radius: .5rem;
+    font-size: 1rem;
+    padding: 1rem;
+    outline: none;
+    
+    option
+    {
+        border: none;
+    }
+
+    &:focus 
+    {
+        border-color: var(--bg-color-03);
+        box-shadow: 0 0 5px var(--bg-color-03);
+    }
+`;

@@ -1,6 +1,7 @@
 // src/types.d.ts
 
 export interface IFeedback {
+    id: string;
     nome: string;
     data: string;
     descricao: string;

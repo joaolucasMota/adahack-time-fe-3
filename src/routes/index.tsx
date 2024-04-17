@@ -9,22 +9,22 @@ import { HomePage } from "../pages/HomePage";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/Empresa/:id",
-        element: <CompanyPage />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/login",
         element: <LoginPage />,
         errorElement: <ErrorPage />,
     },
     {
         path: "/register",
         element: <RegisterPage />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/home",
+        element: <HomePage />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/home/Empresa/:id",
+        element: <CompanyPage />,
         errorElement: <ErrorPage />,
     }
 ])

@@ -20,7 +20,7 @@ export const LoginPage = () => {
         const { email, password } = data;
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/');
+            navigate('/home');
         } catch (error) {
             console.log(error);
         }
