@@ -55,11 +55,13 @@ export const HomePage = () => {
             <S.Container>
                 <S.SearchBarDiv>
                     {/* // Rascunho da ideia  */}
-                    {/* <select name="" id="" defaultValue="" onChange={handleFilter} title="Selecione uma avaliação" required>
+                    <select name="" id="" defaultValue=""  title="Selecione uma avaliação" required>
                         <option value="">Placeholder</option>
                         <option value="positiva">positiva</option>
+                        <option value="negativa">negativa</option>
                         <option value="regular">regular</option>
-                    </select> */}
+                        <option value="neutra">neutra</option>
+                    </select>
                     <input type="text" name="" id="" placeholder="Placeholder" onChange={handleSearch} />
                 </S.SearchBarDiv>
                 <S.Grid>

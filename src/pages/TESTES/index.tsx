@@ -12,6 +12,7 @@ import { CardVagas } from "../../components/CardVagas";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
+import { TagFeedback } from "../../components/TagFeedback";
 
 // TODO: CardFeedBack Error
 // import { CardFeedBack } from "../../components/CardFeedback";
@@ -51,6 +52,11 @@ export const TestComponentPage = () => {
             <NewFeedbackButton />
             <br />
             <Button text="Texto do botão" to="/" />
+            <br />
+            <TagFeedback variant="negativa" />
+            <TagFeedback variant="positiva" />
+            <TagFeedback variant="neutra" />
+            <TagFeedback variant="regular" />
             <br />
             {/* TODO: Erro ao renderizar os feedbacks da aplicação (as vezes vem sem o texto, titulo e data) */}
             {/* {CompanyData.map(empresa => <CardFeedBack key={empresa.nome} feedback={empresa.feedbacks} />)} */}
